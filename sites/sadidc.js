@@ -11,8 +11,10 @@ async function getStock(productId) {
 }
 
 async function getCategories() {
-debugger
-  const a = await ofetch("https://sadidc.com/cart", {
+
+  const url = new URL('https://sadidc.com/cart')
+
+  const a = await ofetch(url.toString(), {
     "credentials": "include",
     "headers": {
       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0",
@@ -35,11 +37,17 @@ debugger
 
   console.log(d.length)
 
-  d.map((i, z)  => {
+  const red = d.map((i, z) => {
     // $(z).href()
-    console.log($(z).find(' .card-title').text().trim())
+    const subPath = $(z).attr('href')
+    const newUrl = new URL(subPath, url.origin);
+
+    const title = $(z).find(' .card-title').text().trim()
+
+    return { title, newUrl: newUrl.toString() }
   })
 
+  return red
 
 }
 
