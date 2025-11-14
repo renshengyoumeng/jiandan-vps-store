@@ -1,0 +1,13 @@
+extends ../layouts/base
+
+block content
+  h1 产品列表（HTMX Demo）
+
+  button(
+    hx-get="/api/products"
+    hx-target="#product-list"
+    hx-swap="innerHTML"
+  ) 刷新产品列表
+
+  #product-list
+    include ../components/productList

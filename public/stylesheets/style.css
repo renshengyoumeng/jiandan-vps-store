@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  background: #006cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+ul {
+  padding-left: 20px;
+}
