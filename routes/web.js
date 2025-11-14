@@ -3,10 +3,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   res.render('pages/index', {
-    title: "HTMX + Pug Demo",
+    title: "sadidc 简单的商品列表",
     products: [
-      { name: "香港优化1区 Nano", price: 1 },
-      { name: "香港优化2区 Mini", price: 2 }
+
     ]
   });
 });

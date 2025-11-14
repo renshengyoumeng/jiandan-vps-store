@@ -1,4 +1,5 @@
 ul
   each p in products
     li #{p.title}
-    //- a(href=#{p.link}, text=#{p.title})
+    a(href=(p.newUrl), target="_blank") #{p.title}
+
